@@ -100,29 +100,6 @@ Buka http://localhost:3001 di browser
 
 **Ganti password default setelah login pertama!**
 
-## Struktur Project
-
-```
-pizza-dashboard/
-├── prisma/
-│   └── schema.prisma      # Database schema
-├── public/
-│   └── sunest-logo.png   # Logo aplikasi
-├── src/
-│   ├── app/
-│   │   ├── api/          # API routes
-│   │   ├── login/        # Halaman login
-│   │   ├── upload/       # Halaman upload
-│   │   ├── dashboard/    # Dashboard utama
-│   │   └── ...           # Halaman lainnya
-│   ├── components/       # React components
-│   ├── lib/              # Utility functions
-│   └── types/            # TypeScript types
-├── .env                  # Environment variables
-├── package.json          # Dependencies
-└── README.md            # Dokumentasi
-```
-
 ## Fitur Utama
 
 1. **Authentication** - Login/Register dengan role-based access
@@ -150,41 +127,6 @@ pizza-dashboard/
 3. **Middleware** melindungi route yang memerlukan auth
 4. **API routes** menggunakan authorization check
 5. **Input validation** di semua form
-
-## Troubleshooting
-
-### Error: Cannot connect to database
-- Pastikan SQL Server running
-- Cek credentials di .env
-- Cek port 1433 tidak diblock firewall
-
-### Error: Prisma Client not generated
-```bash
-npm run db:generate
-```
-
-### Error: Port already in use
-```bash
-# Cari proses yang pakai port 3001
-netstat -ano | findstr :3001
-# Kill process
-taskkill /PID <PID> /F
-```
-
-### Clear cache dan rebuild
-```bash
-rm -rf .next
-rm -rf node_modules/.prisma
-npm run db:generate
-npm run dev
-```
-
-## Production Build
-
-```bash
-npm run build
-npm start
-```
 
 ## Tech Stack
 
